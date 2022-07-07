@@ -848,7 +848,7 @@
             "minecraftVersion": "1.12.2",
             "discord": {
                 "shortId": "1.12.2 Test Server",
-                "largeImageText": "WesterosCraft 1.12.2 Test Server",
+                "largeImageText": "WesterosCraft 1.12.2 Testeeee Server",
                 "largeImageKey": "server-test"
             },
             "mainServer": false,
