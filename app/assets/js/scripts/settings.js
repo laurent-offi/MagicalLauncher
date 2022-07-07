@@ -596,7 +596,7 @@ function refreshAuthAccountSelected(uuid){
             if(selBtn.hasAttribute('selected')){
                 selBtn.removeAttribute('selected')
             }
-            selBtn.innerHTML = 'Select Account'
+            selBtn.innerHTML = 'Sélectionner un compte'
         }
     })
 }
@@ -639,7 +639,7 @@ function populateAuthAccounts(){
                 <div class="settingsAuthAccountActions">
                     <button class="settingsAuthAccountSelect" ${selectedUUID === acc.uuid ? 'selected>Selected Account &#10004;' : '>Select Account'}</button>
                     <div class="settingsAuthAccountWrapper">
-                        <button class="settingsAuthAccountLogOut">Log Out</button>
+                        <button class="settingsAuthAccountLogOut">Se déconnecter</button>
                     </div>
                 </div>
             </div>
