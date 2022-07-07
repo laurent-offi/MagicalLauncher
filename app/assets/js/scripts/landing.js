@@ -124,7 +124,7 @@ document.getElementById('avatarOverlay').onclick = (e) => {
 
 // Bind selected account
 function updateSelectedAccount(authUser){
-    let username = 'Aucun compte sélectionné'
+    let username = 'No Account Selected'
     if(authUser != null){
         if(authUser.displayName != null){
             username = authUser.displayName
@@ -144,14 +144,14 @@ function updateSelectedServer(serv){
     }
     ConfigManager.setSelectedServer(serv != null ? serv.getID() : null)
     ConfigManager.save()
-    server_selection_button.innerHTML = '\u2022 ' + (serv != null ? serv.getName() : 'Aucun serveur sélectionné')
+    server_selection_button.innerHTML = '\u2022 ' + (serv != null ? serv.getName() : 'No Server Selected')
     if(getCurrentView() === VIEWS.settings){
         animateModsTabRefresh()
     }
     setLaunchEnabled(serv != null)
 }
 // Real text is set in uibinder.js on distributionIndexDone.
-server_selection_button.innerHTML = '\u2022 Chargement..'
+server_selection_button.innerHTML = '\u2022 Loading..'
 server_selection_button.onclick = (e) => {
     e.target.blur()
     toggleServerSelection(true)
@@ -222,15 +222,15 @@ const refreshServerStatus = async function(fade = false){
     loggerLanding.log('Refreshing Server Status')
     const serv = DistroManager.getDistribution().getServer(ConfigManager.getSelectedServer())
 
-    let pLabel = 'Serveur'
-    let pVal = 'Hors Ligne'
+    let pLabel = 'SERVER'
+    let pVal = 'OFFLINE'
 
     try {
         const serverURL = new URL('my://' + serv.getAddress())
 
         const servStat = await getServerStatus(47, serverURL.hostname, Number(serverURL.port))
         console.log(servStat)
-        pLabel = 'Joueurs'
+        pLabel = 'PLAYERS'
         pVal = servStat.players.online + '/' + servStat.players.max
 
     } catch (err) {
