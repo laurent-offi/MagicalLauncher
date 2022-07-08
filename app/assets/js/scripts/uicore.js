@@ -67,7 +67,7 @@ if(!isDev){
                 break
             case 'update-not-available':
                 loggerAutoUpdater.log('No new update found.')
-                settingsUpdateButtonStatus('Check for Updates')
+                settingsUpdateButtonStatus('Rechercher les mises à jour')
                 break
             case 'ready':
                 updateCheckListener = setInterval(() => {
